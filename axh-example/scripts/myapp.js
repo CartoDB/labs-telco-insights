@@ -100,7 +100,7 @@
             , "histogram_widget_segment": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "[F] Predicted customer potential",
+                "title": "[F] Similarity to known customers",
                 "column": "prediction",
                 "sync": true,
             }
