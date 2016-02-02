@@ -20,7 +20,7 @@
         }
     )
 
-    
+
     window.myapp.diJSON = {
         "title": "myapp Ads Demo",
         "description": "",
@@ -91,7 +91,7 @@
             , 'category_widget_roadway': {
                 "layerId": window.myapp.layerID,
                 "type": "aggregation",
-                "title": "[F] Roadway proximity",
+                "title": "[F] Highway proximity",
                 "column": "primary_roadway_distance_cats",
                 "aggregation": "count",
                 "sync": true,
