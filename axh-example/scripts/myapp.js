@@ -65,12 +65,21 @@
                 "column": "quad_cat_axh",
                 "sync": true,
             }
-            , "histogram_widget_roadway": {
+            // , "histogram_widget_roadway": {
+            //     "layerId": window.myapp.layerID,
+            //     "type": "histogram",
+            //     "title": "[F] Distance to primary roadways (<1km)",
+            //     "column": "primary_roadway_distance_limit",
+            //     "sync": true,
+            // }
+            , 'category_widget_roadway': {
                 "layerId": window.myapp.layerID,
-                "type": "histogram",
-                "title": "[F] Distance to primary roadways (<1km)",
-                "column": "primary_roadway_distance_limit",
+                "type": "aggregation",
+                "title": "[F] Roadway proximity",
+                "column": "primary_roadway_distance_cats",
+                "aggregation": "count",
                 "sync": true,
+                itemsPerPage: 4
             }
             , "histogram_widget_segment": {
                 "layerId": window.myapp.layerID,
