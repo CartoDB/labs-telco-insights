@@ -26,5 +26,5 @@ update stuartlynn.census_uber_clustering set prediction = (prediction + 1.0)/2.0
 create numeric column, primary_roadway_distance
 
 ```
-update stuartlynn.census_uber_clustering set primary_roadway_distance = st_distance(the_geom::geography, (select the_geom::geography from andrew.tl_2014_us_primaryroads order by the_geom <-> stuartlynn.census_uber_clustering.the_geom limit 1))
+update stuartlynn.census_uber_clustering set primary_roadway_distance = st_distance(the_geom_webmercator, (select the_geom_webmercator from andrew.tl_2014_us_primaryroads order by the_geom <-> stuartlynn.census_uber_clustering.the_geom limit 1))
 ```
