@@ -65,13 +65,13 @@
                 "column": "quad_cat_axh",
                 "sync": true,
             }
-            // , "histogram_widget_roadway": {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "histogram",
-            //     "title": "[F] Distance to primary roadway (meters)",
-            //     "column": "primary_roadway_distance",
-            //     "sync": true,
-            // }
+            , "histogram_widget_roadway": {
+                "layerId": window.myapp.layerID,
+                "type": "histogram",
+                "title": "[F] Distance to primary roadway (meters)",
+                "column": "primary_roadway_distance",
+                "sync": true,
+            }
             , "histogram_widget_segment": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
