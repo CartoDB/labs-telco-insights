@@ -20,5 +20,11 @@ update stuartlynn.census_uber_clustering set owner_occupied_housing_units_per_po
 update 'prediction' so that williamsburg always looks good
 
 ```sql
-update stuartlynn.census_uber_clustering set prediction = (prediction + 1.0)/2.0 where williamsburg = true 
+update stuartlynn.census_uber_clustering set prediction = (prediction + 1.0)/2.0 where williamsburg = true
+```
+
+create numeric column, primary_roadway_distance
+
+```
+update stuartlynn.census_uber_clustering set primary_roadway_distance = st_distance(the_geom::geography, (select the_geom::geography from andrew.tl_2014_us_primaryroads order by the_geom <-> stuartlynn.census_uber_clustering.the_geom limit 1))
 ```

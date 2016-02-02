@@ -23,56 +23,59 @@
             'is_a_current_customer': {
                 "layerId": window.myapp.layerID,
                 "type": "aggregation",
-                "title": "Current customers",
+                "title": "[F] Current customers",
                 "column": "williamsburg",
                 "aggregation": "count",
+                "aggregationColumn": "total_pop",
                 "sync": true,
                 itemsPerPage: 2
             }
             , "histogram_widget_age": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "Target age range",
+                "title": "[Eq] Target age range",
                 "column": "median_age",
-                "bins": 10,
                 "sync": true
             }
             , "histogram_widget_income": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "Target household income",
+                "title": "[Eq] Target household income",
                 "column": "median_household_income",
-                "bins": 10,
                 "sync": true
             }
             , "histogram_widget_homeowners": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "Home ownership prevalence",
+                "title": "[Eq] Home ownership",
                 "column": "owner_occupied_housing_units_per_pop",
-                "bins": 10,
                 "sync": true
             }
             , "histogram_widget_disposable": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "Disposable income rank (max 50)",
+                "title": "[Eq] Disposable income rank (max 50)",
                 "column": "percent_household_income_spent_on_rent",
-                "bins": 10,
                 "sync": true
             }
             , "histogram_widget_tradearea": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "Commercial activity rank (max 4)",
+                "title": "[F] Commercial activity rank (max 4)",
                 "column": "quad_cat_axh",
-                "bins": 4,
+                "sync": true,
+            }
+            , "histogram_widget_roadway": {
+                "layerId": window.myapp.layerID,
+                "type": "histogram",
+                "title": "[F] Distance to primary roadway (meters)",
+                "column": "primary_roadway_distance",
                 "sync": true,
             }
             , "histogram_widget_segment": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "Predicted customer potential",
+                "title": "[F] Predicted customer potential",
                 "column": "prediction",
                 "sync": true,
             }
@@ -193,8 +196,9 @@
 
                 // add stuf for torke layer
                 window.myapp.ads = vLayers.model.layers.models[5];
-                window.myapp.ads.set('extra_params', {});
+                // window.myapp.ads.set('extra_params', {});
 
+                
                 // // Append legend and selector if any
                 // document.querySelector('.CDB-Map-canvas').appendChild(cdb.$('#cartoselector').get(0));
                 // document.querySelector('.CDB-Map-canvas').appendChild(cdb.$('#leyend').get(0));
