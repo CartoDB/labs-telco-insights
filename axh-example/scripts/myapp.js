@@ -54,7 +54,7 @@
             , "histogram_widget_disposable": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "[Eq] Disposable income rank (max 50)",
+                "title": "[Eq] Disposable income percentile",
                 "column": "percent_household_income_spent_on_rent",
                 "sync": true
             }
