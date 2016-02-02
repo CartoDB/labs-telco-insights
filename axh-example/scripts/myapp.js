@@ -65,13 +65,13 @@
                 "column": "quad_cat_axh",
                 "sync": true,
             }
-            , "histogram_widget_roadway": {
-                "layerId": window.myapp.layerID,
-                "type": "histogram",
-                "title": "[F] Distance to primary roadway (meters)",
-                "column": "primary_roadway_distance",
-                "sync": true,
-            }
+            // , "histogram_widget_roadway": {
+            //     "layerId": window.myapp.layerID,
+            //     "type": "histogram",
+            //     "title": "[F] Distance to primary roadway (meters)",
+            //     "column": "primary_roadway_distance",
+            //     "sync": true,
+            // }
             , "histogram_widget_segment": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
@@ -79,100 +79,6 @@
                 "column": "prediction",
                 "sync": true,
             }
-            // , 'retail_areas_list': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //       "title": "Commercial activity rank",
-            //     "column": "quad_cat_axh",
-            //     "aggregation": "count",
-            //     "sync": true,
-            //     itemsPerPage: 4
-            // }
-            // 'categories_gender': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //     "title": "Gender",
-            //     "column": "gender",
-            //     "aggregation": "count",
-            //     "sync": true,
-            //     itemsPerPage: 10
-            // },
-            // 'categories_ad_name': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //     "title": "Ad action",
-            //     "column": "ad_name",
-            //     "aggregation": "count",
-            //     "sync": true,
-            //     itemsPerPage: 10
-            // },
-            // "histogram_widget_store": {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "histogram",
-            //     "title": "Proximity to Store",
-            //     "column": "store",
-            //     "sync": true
-            // },
-            // "histogram_widget_competitor": {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "histogram",
-            //     "title": "Proximity to Competitor",
-            //     "column": "competitor",
-            //     "sync": true
-            // },
-            // 'categories_day': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //     "title": "Time of Day",
-            //     "column": "daytime", //"is_day",
-            //     "aggregation": "count",
-            //     "sync": true
-            // },
-            // 'categories_weekend': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //     "title": "Weekend/Weekday",
-            //     "column": "weektime", //"is_weekend",
-            //     "aggregation": "count",
-            //     "sync": true
-            // },
-            // 'categories_camp': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //     "title": "Campaign ID",
-            //     "column": "camp",
-            //     "aggregation": "count",
-            //     "sync": true,
-            //     itemsPerPage: 10
-            // },
-            // 'categories_type': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //     "title": "Ad Type ID",
-            //     "column": "type",
-            //     "aggregation": "count",
-            //     "sync": true,
-            //     itemsPerPage: 10
-            // },
-            // 'categories_method': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //     "title": "Purchase Method",
-            //     "column": "met",
-            //     "aggregation": "count",
-            //     "sync": true,
-            //     itemsPerPage: 10
-            // },
-            // 'categories_census': {
-            //     "layerId": window.myapp.layerID,
-            //     "type": "aggregation",
-            //     "title": "Zip Code",
-            //     "column": "zcta",
-            //     "aggregation": "count",
-            //     "sync": true,
-            //     itemsPerPage: 10
-            // }
-
         },
         "vizJSON": window.myapp.viz
     };
@@ -198,7 +104,7 @@
                 window.myapp.ads = vLayers.model.layers.models[5];
                 // window.myapp.ads.set('extra_params', {});
 
-                
+
                 // // Append legend and selector if any
                 // document.querySelector('.CDB-Map-canvas').appendChild(cdb.$('#cartoselector').get(0));
                 // document.querySelector('.CDB-Map-canvas').appendChild(cdb.$('#leyend').get(0));
