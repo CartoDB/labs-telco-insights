@@ -68,7 +68,7 @@
             , "histogram_widget_roadway": {
                 "layerId": window.myapp.layerID,
                 "type": "histogram",
-                "title": "[F] Distance to primary roadway (meters)",
+                "title": "[F] Distance to primary roadways (<1km)",
                 "column": "primary_roadway_distance_limit",
                 "sync": true,
             }
