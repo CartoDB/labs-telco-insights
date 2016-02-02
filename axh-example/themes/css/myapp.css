@@ -1,0 +1,78 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans';
+}
+
+/* Layer selector */
+
+.Layer_selector {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Open Sans';
+    width: 200px;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.layer-selector-info {
+    padding: 18px 12px;
+}
+
+.layer-selector-item {
+    margin-bottom: 8px;
+    padding: 0 12px;
+    line-height: 25px;
+}
+
+.layer-selector-item:last-child {
+    margin-bottom: 0;
+}
+
+.layer-selector-item {
+    color: #9B9B9B;
+    cursor: pointer;
+}
+
+.layer-selector-item.is-active {
+    color: #222;
+    font-weight: 600;
+}
+
+.layer-selector-item.is-active.ads {
+    color: #9B9B9B !important;
+    cursor: initial !important;
+}
+
+.layer-selector-item > svg {
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+}
+
+.layer-selector-item .tick {
+    fill: #9B9B9B !important;
+}
+
+.layer-selector-item.is-active .tick {
+    fill: #3AA9E3 !important;
+}
+
+.layer-selector-list {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    background: #FAFAFA;
+    padding: 14px 0;
+}
+
+
+/* Layer selector */
