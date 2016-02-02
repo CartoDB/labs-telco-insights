@@ -40,8 +40,9 @@ primary_roadway_distance <= 1000
 think about which indices to apply
 
 ```sql
-create index idx_slynn_telco_williamsburg on stuartlynn.census_uber_clustering (williamsburg)
-create index idx_slynn_telco_quad_cat_axh on stuartlynn.census_uber_clustering (quad_cat_axh)
-create index idx_slynn_telco_primary_roadway_distance_limit on stuartlynn.census_uber_clustering (primary_roadway_distance_limit)
+create index idx_slynn_telco_williamsburg on stuartlynn.census_uber_clustering (williamsburg);
+create index idx_slynn_telco_quad_cat_axh on stuartlynn.census_uber_clustering (quad_cat_axh);
+create index idx_slynn_telco_primary_roadway_distance_limit on stuartlynn.census_uber_clustering (primary_roadway_distance_limit);
 create index idx_slynn_telco_prediction on stuartlynn.census_uber_clustering (prediction)
+
 ```
