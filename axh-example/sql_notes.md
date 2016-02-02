@@ -28,3 +28,11 @@ create numeric column, primary_roadway_distance
 ```
 update stuartlynn.census_uber_clustering set primary_roadway_distance = st_distance(the_geom_webmercator, (select the_geom_webmercator from andrew.tl_2014_us_primaryroads order by the_geom <-> stuartlynn.census_uber_clustering.the_geom limit 1))
 ```
+
+add a limited version 'primary_roadway_distance' numeric
+
+```sql
+update stuartlynn.census_uber_clustering set
+primary_roadway_distance_limit = primary_roadway_distance where
+primary_roadway_distance <= 1000
+```
