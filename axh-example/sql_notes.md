@@ -33,10 +33,8 @@ update stuartlynn.census_uber_clustering set primary_roadway_distance = st_dista
 Create a text colum n, "primary_roadway_distance_cats"
 
 ```sql
-update stuartlynn.census_uber_clustering set primary_roadway_distance_cats = '1000 meters away' where primary_roadway_distance<=1000;
-update stuartlynn.census_uber_clustering set primary_roadway_distance_cats = '100 meters away' where primary_roadway_distance<=100;
-update stuartlynn.census_uber_clustering set primary_roadway_distance_cats = '0 meters away' where primary_roadway_distance<=1;
-update stuartlynn.census_uber_clustering set primary_roadway_distance_cats = 'N/A' where primary_roadway_distance>1000;
+update stuartlynn.census_uber_clustering set primary_roadway_distance_cats = 'Connected to highway' where primary_roadway_distance<=1000;
+update stuartlynn.census_uber_clustering set primary_roadway_distance_cats = 'No highway' where primary_roadway_distance>1000;
 ```
 
 think about which indices to apply
