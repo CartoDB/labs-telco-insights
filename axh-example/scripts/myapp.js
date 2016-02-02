@@ -5,6 +5,22 @@
 
     window.myapp.layerID = "dee6e67e-2aa8-4f5f-8de1-ef81e2b80033";
 
+
+
+    window.myapp.viz.overlays.push(
+       {
+            "type": "zoom",
+            "order": 6,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 20
+            },
+          "template": "<div class=\"CDB-Overlay\"><button class=\"CDB-Zoom-action CDB-Zoom-action--out js-zoomOut\"></button><button class=\"CDB-Zoom-action CDB-Zoom-action--in js-zoomIn\"></button></div><div class=\"CDB-Zoom-info js-zoomInfo\">1</div>"
+        }
+    )
+
+    
     window.myapp.diJSON = {
         "title": "myapp Ads Demo",
         "description": "",
