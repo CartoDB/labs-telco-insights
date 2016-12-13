@@ -10,7 +10,7 @@ module.exports = function (grunt) {
           collapseWhitespace: true
         },
         files: {                                   // Dictionary of files
-          'index.min.html': 'index.html'         // 'destination': 'source'
+          'index.html': 'index.dev.html'         // 'destination': 'source'
         }
       }
     },
@@ -32,6 +32,7 @@ module.exports = function (grunt) {
         }]
       }
     }
+
   });
   // Load Grunt plugins
   grunt.loadNpmTasks('grunt-contrib-htmlmin');

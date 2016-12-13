@@ -1,47 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Telco Deep Insights</title>
-  <meta name=viewport content="width=device-width initial-scale=1">
-  <link href="http://cartodb.com/favicon.ico" rel="shortcut icon" />
-  <link href="deep-insights.js/dist/themes/css/deep-insights.css" rel="stylesheet" />
-  <link href="css/app.min.css" rel="stylesheet" />
-  <script src="deep-insights.js/dist/deep-insights.compressed.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-</head>
-
-<body>
-  <div class="Dashboard-canvas" id="dashboard"></div>
-<div class="CDB-Legends">
-    <h1 class='CDB-Legends-Title'>MARKET POTENTIAL</h1>
-    <ul class="CDB-Legends-Info is-choropleth">
-      <li class="CDB-Legends-InfoItem">
-        <div class="CDB-Legends-Choropleth">
-          <p class="CDB-Legends-Text is-left">Low</p>
-          <p class="CDB-Legends-Text is-right">High</p>
-        </div>
-        <div class="CDB-Legend-Gradient"></div>
-      </li>
-    </ul>
-    <ul class="CDB-Legends-Info no-margin">
-      <li class="CDB-Legends-InfoItem">
-        <p class="CDB-Legends-Text">
-          <span class="CDB-Marker retail" style="background: #FAAE00;border-color: #FAAE00;"></span>
-          <span>RETAIL LOCATION</span>
-        </p>
-      </li>
-      <li class="CDB-Legends-InfoItem">
-        <p class="CDB-Legends-Text">
-          <span class="CDB-Marker tower" style="background: #FF4480;border-color: #FF4480;"></span>
-          <span>TOWER SITE</span>
-        </p>
-      </li>
-    </ul>
-  </div>
-  <script type='text' id="tooltipTemplate">
-  <div class='CDB-Tooltip CDB-Tooltip--isLight'>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Telco Deep Insights</title><meta name="viewport" content="width=device-widthinitial-scale=1"><link href="http://cartodb.com/favicon.ico" rel="shortcut icon"><link href="deep-insights.js/dist/themes/css/deep-insights.css" rel="stylesheet"><link href="css/app.min.css" rel="stylesheet"><script src="deep-insights.js/dist/deep-insights.compressed.js"></script><script src="https://code.jquery.com/jquery-2.2.0.min.js"></script></head><body><div class="Dashboard-canvas" id="dashboard"></div><div class="CDB-Legends"><h1 class="CDB-Legends-Title">MARKET POTENTIAL</h1><ul class="CDB-Legends-Info is-choropleth"><li class="CDB-Legends-InfoItem"><div class="CDB-Legends-Choropleth"><p class="CDB-Legends-Text is-left">Low</p><p class="CDB-Legends-Text is-right">High</p></div><div class="CDB-Legend-Gradient"></div></li></ul><ul class="CDB-Legends-Info no-margin"><li class="CDB-Legends-InfoItem"><p class="CDB-Legends-Text"><span class="CDB-Marker retail" style="background: #FAAE00;border-color: #FAAE00"></span> <span>RETAIL LOCATION</span></p></li><li class="CDB-Legends-InfoItem"><p class="CDB-Legends-Text"><span class="CDB-Marker tower" style="background: #FF4480;border-color: #FF4480"></span> <span>TOWER SITE</span></p></li></ul></div><script type="text" id="tooltipTemplate"><div class='CDB-Tooltip CDB-Tooltip--isLight'>
     <ul class="CDB-Tooltip-list">
         <li style="list-style: none"></li>
 
@@ -65,10 +22,7 @@
         </li>
         <li style="list-style: none"></li>
     </ul>
-</div>
-  </script>
-  <script>
-var widgetInfo = {},
+</div></script><script>var widgetInfo = {},
 categoryFilters = [];
 
 window.onload = function() {
@@ -236,8 +190,4 @@ window.onload = function() {
          renderMenu:false
       });
    });
-}
-  </script>
-</body>
-
-</html>
+}</script></body></html>
