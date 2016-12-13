@@ -1,3 +1,4 @@
+require('es6-promise').polyfill()
 // Load Grunt
 module.exports = function (grunt) {
   grunt.initConfig({
@@ -31,6 +32,13 @@ module.exports = function (grunt) {
           ext: '.min.css'
         }]
       }
+    },
+    uncss: {
+      dist: {
+        files: {
+          'dist/themes/css/deep-insights.min.css': ['index.dev.html'],
+        }
+      }
     }
 
   });
@@ -41,5 +49,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-uncss');
 
   // Register Grunt tasks
-  grunt.registerTask('default', ['htmlmin', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['htmlmin', 'uglify', 'cssmin', 'uncss']);
 };
