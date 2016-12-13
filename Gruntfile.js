@@ -32,14 +32,15 @@ module.exports = function (grunt) {
           ext: '.min.css'
         }]
       }
-    },
+    }
+    /*,
     uncss: {
       dist: {
         files: {
-          'dist/themes/css/deep-insights.min.css': ['index.dev.html'],
+          'dist/themes/css/deep-insights.css': ['index.dev.html'],
         }
       }
-    }
+    }*/
 
   });
   // Load Grunt plugins
@@ -49,5 +50,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-uncss');
 
   // Register Grunt tasks
-  grunt.registerTask('default', ['htmlmin', 'uglify', 'cssmin', 'uncss']);
+  grunt.registerTask('default', ['htmlmin', 'uglify', 'cssmin']);
 };
