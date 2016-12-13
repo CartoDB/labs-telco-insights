@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Telco Deep Insights</title><meta name="viewport" content="width=device-widthinitial-scale=1"><link href="http://cartodb.com/favicon.ico" rel="shortcut icon"><link href="deep-insights.js/dist/themes/css/deep-insights.css" rel="stylesheet"><link href="css/app.min.css" rel="stylesheet"><script src="deep-insights.js/dist/deep-insights.compressed.js"></script><script src="https://code.jquery.com/jquery-2.2.0.min.js"></script></head><body><div class="Dashboard-canvas" id="dashboard"></div><div class="CDB-Legends"><h1 class="CDB-Legends-Title">MARKET POTENTIAL</h1><ul class="CDB-Legends-Info is-choropleth"><li class="CDB-Legends-InfoItem"><div class="CDB-Legends-Choropleth"><p class="CDB-Legends-Text is-left">Low</p><p class="CDB-Legends-Text is-right">High</p></div><div class="CDB-Legend-Gradient"></div></li></ul><ul class="CDB-Legends-Info no-margin"><li class="CDB-Legends-InfoItem"><p class="CDB-Legends-Text"><span class="CDB-Marker retail" style="background: #FAAE00;border-color: #FAAE00"></span> <span>RETAIL LOCATION</span></p></li><li class="CDB-Legends-InfoItem"><p class="CDB-Legends-Text"><span class="CDB-Marker tower" style="background: #FF4480;border-color: #FF4480"></span> <span>TOWER SITE</span></p></li></ul></div><script type="text" id="tooltipTemplate"><div class='CDB-Tooltip CDB-Tooltip--isLight'>
+    <ul class="CDB-Tooltip-list">
+        <li style="list-style: none"></li>
+
+        <li class="CDB-Tooltip-listItem">
+            <h4 class="CDB-Tooltip-listTitle">Median Age</h4>
+            <p class="CDB-Tooltip-listText">{{median_age}}</p>
+        </li>
+        <li class="CDB-Tooltip-listItem">
+            <h4 class="CDB-Tooltip-listTitle">Median Household
+            Income</h4>
+            <p class="CDB-Tooltip-listText">
+            ${{median_household_income}}</p>
+        </li>
+        <li class="CDB-Tooltip-listItem">
+            <h4 class="CDB-Tooltip-listTitle">Home Ownership</h4>
+            <p class="CDB-Tooltip-listText">{{ownership}}%</p>
+        </li>
+        <li class="CDB-Tooltip-listItem">
+            <h4 class="CDB-Tooltip-listTitle">Disposable Income Percentile</h4>
+            <p class="CDB-Tooltip-listText">{{rent_spend}}</p>
+        </li>
+        <li style="list-style: none"></li>
+    </ul>
+</div></script><script>var widgetInfo = {},
+categoryFilters = [];
+
+window.onload = function() {
+
+   var vizJSONUrl = 'telco.viz.json';
+
+   $.getJSON(vizJSONUrl, function(vizJSON) {
+      var diJSON =  {
+     "title":"Telco Demographic Targeting",
+      "description":"The map shows current retail locations and cell tower locations overlaid on census tracts.  When the user selects a priority demographics using the histogram widgets, the map colors will update to show which areas best match the current selections",
+      "user":{
+         "fullname":"Chris Whong",
+         "avatar_url":"https://pbs.twimg.com/profile_images/3057855429/49cff02ea1ea88993d7edadd8b027982.jpeg"
+      },
+      "updated_at":"2016-01-31T11:50:30+00:00",
+
+     "datasource":{
+         "type":"public_map",
+         "user_name":"solutions",
+         "maps_api_template":"https://{user}.cartodb.com:443",
+         "stat_tag":"be7a4d14-c3a1-11e5-afb7-04013fc66a01",
+         "force_cors":true      // This is sometimes set in the editor
+      },
+      "widgets":[
+
+        {
+           "type":"formula",
+           "layerIndex": 1,
+           "title":"Total Population",
+           "options":{
+             "column" : 'total_pop',
+             "operation": "sum"
+           }
+
+        },
+          {
+             "type":"formula",
+             "layerIndex": 1,
+             "title":"Potential Customers",
+             "options":{
+               "column" : 'pop_score',
+               "operation": "sum"
+             }
+
+          },
+
+          // {
+          //   "type":"formula",
+          //   "layerIndex": 1,
+          //   "title":"Total Population Served by Towers",
+          //   "options":{
+          //     "column" : 'population_served',
+          //     "operation": "sum"
+          //   }
+
+          // },
+
+          {
+             "type":"formula",
+             "layerIndex": 1,
+             "title":"Potential Customers Served by Towers",
+             "options":{
+               "column" : 'segment_served',
+               "operation": "sum"
+             }
+
+          },
+         {
+            "type":"histogram",
+            "layerIndex": 1,
+            "title":"Target Age Range",
+            "options": {
+              "column":"median_age",
+              "bins":10
+            }
+         },
+         {
+            "type":"histogram",
+            "layerIndex": 1,
+            "title":"Target Household Income",
+            "options": {
+              "column":"median_household_income",
+              "bins":10
+            }
+         },
+         {
+            "type":"histogram",
+            "layerIndex": 1,
+            "title":"Home Ownership",
+            "options": {
+              "column":"owner_occupied_housing_units_per_pop",
+              "bins":10
+            }
+         },
+          {
+            "type":"histogram",
+            "layerIndex": 1,
+            "title":"Disposable Income Percentile",
+            "options": {
+              "column":"percent_household_income_spent_on_rent",
+              "bins":10
+            }
+         },
+
+         {
+           "type":"category",
+           "layerIndex": 1,
+           "title": "Current Customers",
+           "options": {
+             "type": "aggregation",
+             "column": "williamsburg",
+             "aggregation": "count",
+             "aggregationColumn": "williamsburg"
+           }
+         },{
+           "type":"category",
+           "layerIndex": 1,
+           "title": "Highway Proximity",
+           "options": {
+             "type": "aggregation",
+             "column": "primary_roadway_distance_cats",
+             "aggregation": "count",
+             "aggregationColumn": "primary_roadway_distance_cats"
+           }
+         }
+
+       ]
+      }
+
+      vizJSON.overlays.push(
+         {
+              "type": "zoom",
+              "order": 6,
+              "options": {
+                "display": true,
+                "x": 20,
+                "y": 20
+              },
+            "template": "<div class=\"CDB-Overlay\"><button class=\"CDB-Zoom-action CDB-Zoom-action--out js-zoomOut\"></button><button class=\"CDB-Zoom-action CDB-Zoom-action--in js-zoomIn\"></button></div><div class=\"CDB-Zoom-info js-zoomInfo\">1</div>"
+          }
+      )
+
+      vizJSON.layers[1].options.layer_definition.layers[0].tooltip.template = $('#tooltipTemplate').text();
+
+
+// START axh temporary fix to toggle legends and tooltips through URL parameters
+      var queryDict = {'legend': 'true', 'tooltips': 'true'}
+      location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+      if (queryDict['legend'].toLowerCase()=='false'){
+        var legends = document.getElementsByClassName("CDB-Legends");
+        for(var i = 0; i < legends.length; i++)
+         {
+         legends[i].style.visibility="hidden";
+         }
+      }
+      if (queryDict['tooltips'].toLowerCase()=='false'){
+        vizJSON.layers[1].options.layer_definition.layers[0].tooltip = null;
+      }
+// END axh temporary fix
+
+
+      $.extend(vizJSON, diJSON);
+      cartodb.deepInsights.createDashboard('#dashboard', vizJSON, {
+         no_cdn:false,
+         renderMenu:false
+      });
+   });
+}</script></body></html>
