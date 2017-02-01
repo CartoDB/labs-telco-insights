@@ -4,6 +4,9 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
 }
 .cartodb-tooltip-content {
   color: #FFF;
@@ -27,6 +30,9 @@ body {
   color: #2E3C43;
   margin-bottom: 8px;
 }
+  .CDB-Legend-hide {
+    display: none;
+  }
 .CDB-Legend-Gradient {
   height: 8px;
   background-image: linear-gradient(-90deg,#59CC9B 9%, #3FB79D 29%, #318C93 49%, #3D6177 71%, #3F4D64 90%);
@@ -140,3 +146,137 @@ body {
 .CDB-Widget-tag--sum {
   display: none;
 }
+
+.CDB-Widget-content text {
+  font-family: 'Open Sans';
+}
+
+.CDB-Widget-textSmaller {
+  font-size: 9px;
+}
+
+
+/* fix */
+.CDB-Widget-buttonIcon--circle {
+  min-width: 16px;
+}
+
+.Header-mobile {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  padding: 12px;
+  background: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  display: none;
+}
+.Header-mobileText {
+  color: #2E3C43;
+  font: 12px 'Open Sans';
+}
+
+@media only screen and (max-width: 960px) and (min-width: 320px) {
+  .CDB-Legends {
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    border-radius: 0;
+    z-index: 10;
+    opacity: 1;
+    width: 244px;
+    border: 0;
+    transform: translateX(244px);
+    transition: all ease-in 150ms;
+    box-shadow: 0 0 0;
+  }
+  .CDB-Legend-hide {
+    position: absolute;
+    right: 15px;
+    display: block;
+  }
+  .show-legends .CDB-Legends {
+    transform: translateX(0);
+  }
+  .show-legends .CDB-LegendContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+  }
+  .Header-mobile {
+    display: flex;
+  }
+  .Header-mobileActions {
+    cursor: pointer;
+  }
+  .CDB-Map {
+    border-radius: 0;
+  }
+  .CDB-Widget-canvas {
+    margin-top: 0;
+  }
+  .CDB-Dashboard-canvas {
+    padding: 0;
+  }
+  .CDB-Widget-info { 
+    justify-content: flex-start;
+  }
+  .CDB-Widget {
+    border-left: 1px solid #f2f6f9;
+  }
+  .CDB-Widget:first-child {
+    border-left: 0;
+  }
+  .CDB-Widget-options.CDB-Widget-contentSpaced {
+    overflow: visible;
+  }
+  .CDB-Widget-contentSpaced {
+    overflow: hidden;
+  }
+  .CDB-Shape-threePoints {
+    display: none;
+  }
+  .CDB-Widget-infoDescription {
+    margin-right: 6px;
+  }
+  .CDB-Widget-infoDescription:last-child {
+    margin-right: 0
+  }
+}
+
+@media (max-width: 750px) {
+  .CDB-Zoom {
+    display: none;
+  }
+  .CDB-Search {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+  }
+  .CDB-Attribution {
+    bottom: 32px;
+  }
+
+  .CDB-Attribution-text {
+    position: absolute;
+    top: calc(-100% - 12px);
+    background: rgba(0,0,0,.64);
+    padding: 8px;
+    border-radius: 4px;
+    right: 0;
+    max-width: 80%;
+  }
+  .CDB-Attribution.is-active {
+    background: none !important;
+  }
+}
+
+
